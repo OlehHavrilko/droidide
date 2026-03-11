@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+volumes:
+  project_data:
